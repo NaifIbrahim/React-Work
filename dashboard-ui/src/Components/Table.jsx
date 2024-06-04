@@ -16,7 +16,6 @@ const rows = [
   createData('Ice cream sandwich', 237, 9.0, '-', 4.3),
   createData('Eclair', 262, 16.0, '-', 6.0),
   // createData('Cupcake', 305, 3.7, '-', 4.3),
-  // createData('Gingerbread', 356, 16.0, '-', 3.9),
 ];
 
 export default function BasicTable() {
