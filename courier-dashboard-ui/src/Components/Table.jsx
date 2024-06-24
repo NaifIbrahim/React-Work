@@ -12,9 +12,9 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, '-', 4.0),
-  createData('Ice cream', 237, 9.0, '-', 4.3),
-  createData('Eclair', 262, 16.0, '-', 6.0),
+  createData('0111020', 159, 6.0, '-', 4.0),
+  createData('0151522', 237, 9.0, '-', 4.3),
+  createData('5441565', 262, 16.0, '-', 6.0),
   // createData('Cupcake', 305, 3.7, '-', 4.3),
 ];
 
@@ -24,18 +24,18 @@ export default function BasicTable() {
       <Table sx={{ minWidth: 1200 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell align="center">Dessert (100g serving)</TableCell>
-            <TableCell align="center">Calories</TableCell>
-            <TableCell align="center">Fat&nbsp;(g)</TableCell>
-            <TableCell align="center">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="center">Protein&nbsp;(g)</TableCell>
-            <TableCell align="center">Protein&nbsp;(g)</TableCell>
-            <TableCell align="center">Protein&nbsp;(g)</TableCell>
-            <TableCell align="center">Protein&nbsp;(g)</TableCell>
-            <TableCell align="center">Protein&nbsp;(g)</TableCell>
-            <TableCell align="center">Protein&nbsp;(g)</TableCell>
-            <TableCell align="center">Protein&nbsp;(g)</TableCell>
-            <TableCell align="center">Protein&nbsp;(g)</TableCell>
+            <TableCell align="center">Consgnment Number</TableCell>
+            <TableCell align="center">Order Number</TableCell>
+            <TableCell align="center">Policy Number</TableCell>
+            <TableCell align="center">Ref Number</TableCell>
+            <TableCell align="center">Cilent Details</TableCell>
+            <TableCell align="center">Payment Type</TableCell>
+            <TableCell align="center">Status</TableCell>
+            <TableCell align="center">Issue City</TableCell>
+            <TableCell align="center">Dev Officer Name</TableCell>
+            <TableCell align="center"></TableCell>
+            <TableCell align="center"></TableCell>
+            <TableCell align="center"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
