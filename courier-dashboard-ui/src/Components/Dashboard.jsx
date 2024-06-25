@@ -13,8 +13,10 @@ import HistoryIcon from '@mui/icons-material/History';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import LogoutIcon from '@mui/icons-material/Logout';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
+import CachedIcon from '@mui/icons-material/Cached';
 import React, { useState } from 'react';
 import BasicTable from '../Components/Table';
+import './Dashboard.css'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Dashboard() {
@@ -29,6 +31,33 @@ function Dashboard() {
   });
 
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+
+  const [formValues, setFormValues] = useState({
+    ref_number: '',
+    orderNumber: '',
+    consignment_number: '',
+    clientName: '',
+    clientEmail: '',
+    clientPhone: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormValues({
+      ...formValues,
+      [id]: value
+    });
+  };
+
+  const handleSubmit = () => {
+    console.log(formValues);
+    console.log(formValues.ref_number);
+    console.log(formValues.orderNumber);
+    console.log(formValues.consignment_number);
+    console.log(formValues.clientName);
+    console.log(formValues.clientEmail);
+    console.log(formValues.clientPhone);
+  };
 
   const handleButtonClick = (buttonId) => {
     const newButtonColors = {
@@ -47,6 +76,8 @@ function Dashboard() {
   const toggleSidebar = () => {
     setIsSidebarCollapsed(!isSidebarCollapsed);
   };
+
+
 
   const theme = createTheme({
     palette: {
@@ -85,7 +116,7 @@ function Dashboard() {
             <Box sx={{ display: 'flex' }}>
               <Box sx={{
                 width: isSidebarCollapsed ? '5%' : '20%',
-                height: '100vh',
+                height: '100%',
                 backgroundColor: '#E5EAF1',
                 display: 'flex',
                 flexDirection: 'column',
@@ -181,56 +212,78 @@ function Dashboard() {
                     COURIER DASHBOARD
                   </Typography>
                   <br />
-                  <Grid container spacing={2}>
-                    <Grid item xs={12} sm={4}>
-                      <TextField fullWidth
-                        id="outlined-textarea"
-                        label={<span style={{ fontWeight: 'bold' }}>Enter Consignment Number</span>}
-                        placeholder="Enter consignment number"
-                        multiline
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                      <TextField fullWidth
-                        id="outlined-textarea"
-                        label={<span style={{ fontWeight: 'bold' }}>Enter Order</span>}
-                        placeholder="Enter order number"
-                        multiline
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                      <TextField fullWidth
-                        id="outlined-textarea"
-                        label={<span style={{ fontWeight: 'bold' }}>Enter Consignment Number</span>}
-                        placeholder="Enter consignment number"
-                        multiline
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                      <TextField fullWidth
-                        id="outlined-textarea"
-                        label={<span style={{ fontWeight: 'bold' }}>Enter Client Name</span>}
-                        placeholder="Enter client name"
-                        multiline
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                      <TextField fullWidth
-                        id="outlined-textarea"
-                        label={<span style={{ fontWeight: 'bold' }}>Enter Client E-mail</span>}
-                        placeholder="Enter client E-mail"
-                        multiline
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                      <TextField fullWidth
-                        id="outlined-textarea"
-                        label={<span style={{ fontWeight: 'bold' }}>Enter Client Phone</span>}
-                        placeholder="Enter client phone"
-                        multiline
-                      />
-                    </Grid>
-                    <Button variant="contained" sx={{ margin: '20px', borderRadius: '40px', textTransform: 'none', backgroundColor: '#0194DB' }}>Search for Courier</Button>
+                  <Grid container spacing={0}>
+                    <Box sx={{ flexGrow: 1 }}>
+                      <Grid container spacing={2}>
+                        <Grid item xs={12} sm={4}>
+                          <TextField
+                            fullWidth
+                            id="ref_number"
+                            label={<span style={{ fontWeight: 'bold' }}>Ref Number</span>}
+                            placeholder="Enter Ref number"
+                            multiline
+                            value={formValues.ref_number}
+                            onChange={handleInputChange}
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <TextField
+                            fullWidth
+                            id="orderNumber"
+                            label={<span style={{ fontWeight: 'bold' }}>Order Number</span>}
+                            placeholder="Enter order number"
+                            multiline
+                            value={formValues.orderNumber}
+                            onChange={handleInputChange}
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <TextField
+                            fullWidth
+                            id="consignment_number"
+                            label={<span style={{ fontWeight: 'bold' }}>Consignment Number</span>}
+                            placeholder="Enter consignment number"
+                            multiline
+                            value={formValues.consignment_number}
+                            onChange={handleInputChange}
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <TextField
+                            fullWidth
+                            id="clientName"
+                            label={<span style={{ fontWeight: 'bold' }}>Client Name</span>}
+                            placeholder="Enter client name"
+                            multiline
+                            value={formValues.clientName}
+                            onChange={handleInputChange}
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <TextField
+                            fullWidth
+                            id="clientEmail"
+                            label={<span style={{ fontWeight: 'bold' }}>Client E-mail</span>}
+                            placeholder="Enter client E-mail"
+                            multiline
+                            value={formValues.clientEmail}
+                            onChange={handleInputChange}
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <TextField
+                            fullWidth
+                            id="clientPhone"
+                            label={<span style={{ fontWeight: 'bold' }}>Client Phone</span>}
+                            placeholder="Enter client phone"
+                            multiline
+                            value={formValues.clientPhone}
+                            onChange={handleInputChange}
+                          />
+                        </Grid>
+                      </Grid>
+                    </Box>
+                    <Button variant="contained" sx={{ margin: '20px', borderRadius: '40px', textTransform: 'none', backgroundColor: '#0194DB' }} onClick={handleSubmit}>Search for Courier</Button>
                   </Grid>
                   <ThemeProvider theme={theme}>
                     <div>
@@ -290,6 +343,7 @@ function Dashboard() {
                       >
                         Returned
                       </Button>
+                      <CachedIcon sx={{ marginLeft: '15px', fontSize: '30px' }} />
                     </div>
                   </ThemeProvider>
                   <br />
