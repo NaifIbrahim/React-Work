@@ -16,7 +16,6 @@ import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import CachedIcon from '@mui/icons-material/Cached';
 import React, { useState } from 'react';
 import BasicTable from '../Components/Table';
-import './Dashboard.css'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Dashboard() {
