@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Box, Typography, TextField, Button } from '@mui/material';
+import { Grid, Box, Typography, TextField, Button, useMediaQuery } from '@mui/material';
 import { ClassNames } from '@emotion/react';
 import cover from '../Assets/Cover.png';
 import logo3 from '../Assets/logo3.png';
@@ -7,9 +7,10 @@ import learnIcon from '../Assets/learn-icon.png';
 import location from '../Assets/location-icon.png';
 import support from '../Assets/Support-Icon.png';
 import P3logo from '../Assets/P3-logo.png';
-import './Login.css';
 
 function Login() {
+    const isMobile = useMediaQuery('(max-width:600px)');
+
     const classes = {
         root: {
             height: '100%',
@@ -120,7 +121,7 @@ function Login() {
                             <Button
                                 variant="contained"
                                 color="primary"
-                                sx={{ height: '50px', width: '65%', borderRadius: '30px', marginBottom: '10px' }}
+                                sx={{ height: '50px', width: '65%', borderRadius: '30px', marginBottom: '10px', backgroundColor: '#052CAC' }}
                             >
                                 Log in
                             </Button>
@@ -165,7 +166,7 @@ function Login() {
                                 </Typography>
                             </Box>
                         </Box>
-                        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%', marginTop:'40px' }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%', marginTop: '40px' }}>
                             <Typography variant='body2' sx={{ marginTop: '30px', fontWeight: 'bold' }}>
                                 Version 1.3.0
                             </Typography>
@@ -174,11 +175,13 @@ function Login() {
                     </Box>
                 </Box>
             </Grid>
-            <Grid item xs={12} md={5}>
-                <Box className={ClassNames.rightPanel} sx={classes.rightPanel}>
-                    <img src={cover} alt="Cover" style={{ height: '100vh', width: '100vw' }} />
-                </Box>
-            </Grid>
+            {!isMobile && (
+                <Grid item xs={12} md={5}>
+                    <Box className={ClassNames.rightPanel} sx={classes.rightPanel}>
+                        <img src={cover} alt="Cover" style={{ height: '100vh', width: '100vw' }} />
+                    </Box>
+                </Grid>
+            )}
         </Grid>
     );
 }
