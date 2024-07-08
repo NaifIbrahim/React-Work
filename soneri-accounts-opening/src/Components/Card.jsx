@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Grid, Card, CardContent, Typography, CardActions, Button, Modal, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const style = {
   display: 'flex',
@@ -15,7 +16,7 @@ const style = {
   p: 2,
 };
 
-const GenericCard = ({ title, description, primaryActionText, secondaryActionText, onPrimaryActionClick, onSecondaryActionClick }) => {
+const GenericCard = ({ title, description, primaryActionText, secondaryActionText }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -86,19 +87,20 @@ const GenericCard = ({ title, description, primaryActionText, secondaryActionTex
             </span>
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
-            <Button
-              sx={{
-                marginBottom: 1,
-                textTransform: 'none',
-                color: '#052CAC',
-                padding: '6px 35px',
-                maxWidth: 'fit-content'
-              }}
-              color="primary"
-            // onClick={onPrimaryActionClick}
-            >
-              LET'S START
-            </Button>
+            <Link to="/basic-customer-info">
+              <Button
+                sx={{
+                  marginBottom: 1,
+                  textTransform: 'none',
+                  color: '#052CAC',
+                  padding: '6px 35px',
+                  maxWidth: 'fit-content'
+                }}
+                color="primary"
+              >
+                LET'S START
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Modal>
