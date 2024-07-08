@@ -27,7 +27,7 @@ export default function SelectTextFields() {
         '& .MuiTextField-root': { width: '391px' },
       }}
       noValidate
-      autoComplete="on"
+      autoComplete="off"
     >
       <div>
         <TextField
