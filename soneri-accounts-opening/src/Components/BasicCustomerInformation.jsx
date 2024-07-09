@@ -1,28 +1,14 @@
 import React from 'react';
 import { Box, Button, Checkbox, Grid, TextField, Typography } from '@mui/material';
-import logo from '../original_.jpeg';
 import SelectTextFields from './DropdownTextfield';
+import FormHeader from './FormHeader';
 
 function BasicCustomerInformation() {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
     return (
         <>
-            <Box
-                sx={{
-                    width: '100%',
-                    height: '80px',
-                    background: 'linear-gradient(to bottom, #FBE198, rgba(251, 225, 152, 0))',
-                    display: 'flex',
-                    justifyContent: 'flex-start',
-                    alignItems: 'center',
-                }}
-            >
-                <img src={logo} alt="Logo" height='60px' style={{ marginRight: '20px' }} />
-                <Typography variant='h6' sx={{ fontWeight: 'bold', marginLeft: '380px' }}>
-                    Soneri Digital Account Opening Portal
-                </Typography>
-            </Box>
+            <FormHeader />
             <Grid container justifyContent="center" style={{ marginTop: '20px' }}>
                 <Grid item xs={12} sm={10} md={8} lg={10}>
                     <Box sx={{ backgroundColor: '#FFFFFF', padding: '20px' }}>
