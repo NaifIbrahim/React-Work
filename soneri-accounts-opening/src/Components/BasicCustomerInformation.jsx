@@ -80,7 +80,7 @@ function BasicCustomerInformation() {
                                     I understand that all correspondence will be carried out on above-mentioned address unless changed in the future by me.
                                 </Typography>
                             </Box>
-                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            < Box sx={{ display: 'flex', alignItems: 'center' }}>
                                 <Checkbox {...label} />
                                 <Typography sx={{ marginLeft: '8px', fontSize: '12px' }}>
                                     I consent to be contacted on and receive important alerts, statement and updates on my registered number from Soneri WhatsApp service.
