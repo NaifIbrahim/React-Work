@@ -9,7 +9,7 @@ const GenericCard = ({ title, description, primaryActionText, secondaryActionTex
 
   return (
     <Grid item xs={12} sm={6} md={4}>
-      <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+      <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', borderRadius:'0px' }}>
         <CardContent sx={{ flex: 1, minHeight: '300px' }}>
           <Typography variant="h6" sx={{ marginBottom: 2, fontWeight: 'bold', minHeight: '64px' }}>
             {title}
