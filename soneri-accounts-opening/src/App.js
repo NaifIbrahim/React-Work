@@ -5,6 +5,7 @@ import Homepage from './Components/Homepage';
 import OTP from './Components/OTP';
 import BasicInformation from './Components/BasicInformation';
 import TestingApi from './Components/API';
+import IncomeTax from './Components/IncomeTax';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Authentication" element={<OTP />} />
           <Route path="/BasicInformation" element={<BasicInformation />} />
           <Route path="/Testing" element={<TestingApi />} />
+          <Route path="/IncomeTax" element={<IncomeTax />} />
         </Routes>
       </div>
     </Router>

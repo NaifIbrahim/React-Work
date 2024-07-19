@@ -7,7 +7,7 @@ import GenericCard from './Card';
 function Homepage() {
     const [cardData, setCardData] = useState([]);
     const [selectedAccountType, setSelectedAccountType] = useState('CONVENTIONAL');
- 
+
     const fetchData = async () => {
         try {
             const response = await axios.get('https://rda-api-qa.cloudasset.com/api/v1/digital/onboard/products/new');
