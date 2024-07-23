@@ -123,7 +123,7 @@ function AccountInfo() {
                                             control={<Radio />}
                                             label={
                                                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                                    <img src={`/path/card${index + 1}.png`} alt={card} style={{ width: '100%', marginBottom: '8px' }} />
+                                                    <img src={`/Assets/SoneriGoldDebitCard${index + 1}.png`} alt={card} style={{ width: '100%', marginBottom: '8px' }} />
                                                     <Typography variant='body2' sx={{ fontWeight: 'bold' }}>
                                                         {card}
                                                     </Typography>

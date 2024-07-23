@@ -14,7 +14,7 @@ const GenericCard = ({ title, description, primaryActionText, secondaryActionTex
           <Typography variant="h6" sx={{ marginBottom: 2, fontWeight: 'bold', minHeight: '64px' }}>
             {title}
           </Typography>
-          <Typography variant="body2" sx={{ marginBottom: 2 }}>
+          <Typography variant="body1" sx={{ marginBottom: 2 }}>
             {description}
           </Typography>
         </CardContent>
