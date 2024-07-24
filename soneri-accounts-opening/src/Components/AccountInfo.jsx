@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Box, Typography, TextField, FormControl, FormControlLabel, RadioGroup, Radio, Button, Checkbox } from '@mui/material';
 import SelectTextFields from './DropdownTextfield';
-import FormHeader from './FormHeader';
 import { useNavigate } from 'react-router-dom';
 
 function AccountInfo() {
@@ -14,7 +13,6 @@ function AccountInfo() {
 
     return (
         <>
-            <FormHeader />
             <Grid container justifyContent="center" style={{ marginTop: '20px' }}>
                 <Grid item xs={12} sm={10} md={8} lg={10}>
                     <Box sx={{ backgroundColor: '#FFFFFF', padding: '20px' }}>

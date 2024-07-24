@@ -1,5 +1,4 @@
 import React from 'react';
-import FormHeader from './FormHeader';
 import { Grid, Box, Typography, TextField, Checkbox, FormControl, RadioGroup, FormControlLabel, Radio, Button } from '@mui/material';
 import SelectTextFields from './DropdownTextfield';
 import { useNavigate } from 'react-router-dom';
@@ -17,7 +16,6 @@ function IncomeTax() {
     };
     return (
         <>
-            <FormHeader />
             <Grid container justifyContent="center" style={{ marginTop: '20px' }}>
                 <Grid item xs={12} sm={10} md={8} lg={10}>
                     <Box sx={{ backgroundColor: '#FFFFFF', padding: '20px', }}>

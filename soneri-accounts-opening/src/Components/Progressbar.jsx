@@ -1,8 +1,9 @@
 import React from 'react';
 import { Stepper, Step, StepLabel, Box } from '@mui/material';
+import FormHeader from './FormHeader';
 
 const steps = [
-  'Let\'s start',
+  "Let's start",
   'Authentication',
   'Your Details',
   'Income & Tax',
@@ -15,6 +16,7 @@ const steps = [
 const CustomStepper = ({ activeStep }) => {
   return (
     <Box sx={{ width: '100%' }}>
+      <FormHeader/>
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label, index) => (
           <Step key={label} completed={index < activeStep}>

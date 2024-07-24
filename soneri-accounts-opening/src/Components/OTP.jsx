@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Button, TextField, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import FormHeader from './FormHeader';
 
 function OTP() {
     const [otp, setOtp] = useState(['', '', '', '']);
@@ -25,7 +24,7 @@ function OTP() {
 
     return (
         <>
-            <FormHeader />
+        <br />
             <Box sx={{ display: 'flex', justifyContent: 'center', height: '80%' }}>
                 <Box sx={{ textAlign: 'center' }}>
                     <Typography variant='body1'>

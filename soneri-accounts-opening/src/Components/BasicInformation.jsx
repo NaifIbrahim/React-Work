@@ -1,5 +1,4 @@
 import React from 'react'
-import FormHeader from './FormHeader'
 import { Alert, Box, Button, Checkbox, Grid, Radio, TextField, Typography } from '@mui/material';
 import BasicDatePicker from './Datepicker'
 import { useNavigate } from 'react-router-dom';
@@ -18,7 +17,6 @@ function BasicInformation() {
 
     return (
         <>
-            <FormHeader />
             <Grid container justifyContent="center" style={{ marginTop: '20px' }}>
                 <Grid item xs={12} sm={10} md={8} lg={8}>
                     <Box sx={{ backgroundColor: '#FFFFFF', padding: '20px' }}>
