@@ -2,14 +2,19 @@ import React from 'react'
 import FormHeader from './FormHeader'
 import { Alert, Box, Button, Checkbox, Grid, Radio, TextField, Typography } from '@mui/material';
 import BasicDatePicker from './Datepicker'
+import { useNavigate } from 'react-router-dom';
 
 function BasicInformation() {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     const [selectedValue, setSelectedValue] = React.useState('a');
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
     }
+    const handleNext = () => {
+        navigate('/IncomeTax');
+    };
 
     return (
         <>
@@ -303,7 +308,7 @@ function BasicInformation() {
                         </Box>
                     </Grid>
                     <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '60px' }}>
-                        <Button variant='contained' sx={{ backgroundColor: '#052CAC', borderRadius: '10px', padding: '10px', marginBottom: '30px' }}>SAVE & NEXT</Button>
+                        <Button variant='contained' onClick={handleNext} sx={{ backgroundColor: '#052CAC', borderRadius: '10px', padding: '10px', marginBottom: '30px' }}>SAVE & NEXT</Button>
                     </Box>
                 </Grid>
             </Grid>

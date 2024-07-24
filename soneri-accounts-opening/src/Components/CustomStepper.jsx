@@ -1,18 +1,22 @@
+// CustomStepper.js
 import React from 'react';
 import { Stepper, Step, StepLabel, Box } from '@mui/material';
+import { useProgress } from './ProgressContext';
 
 const steps = [
-  'Let\'s start',
+  "Let's start",
+  'Basic Customer Information',
   'Authentication',
-  'Your Details',
+  'Basic Information',
   'Income & Tax',
   'Account Info',
   'Documents',
-  'Consent & declaration',
+  'Consent & Declaration',
   'Review',
 ];
 
-const CustomStepper = ({ activeStep }) => {
+const CustomStepper = () => {
+  const activeStep = useProgress();
   return (
     <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep} alternativeLabel>

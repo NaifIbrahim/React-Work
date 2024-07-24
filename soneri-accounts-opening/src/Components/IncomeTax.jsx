@@ -2,10 +2,19 @@ import React from 'react';
 import FormHeader from './FormHeader';
 import { Grid, Box, Typography, TextField, Checkbox, FormControl, RadioGroup, FormControlLabel, Radio, Button } from '@mui/material';
 import SelectTextFields from './DropdownTextfield';
+import { useNavigate } from 'react-router-dom';
 
 function IncomeTax() {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+    const navigate = useNavigate();
 
+    const handleNext = () => {
+        navigate('/AccountInfo');
+    };
+
+    const handleback = () => {
+        navigate('/BasicInformation');
+    };
     return (
         <>
             <FormHeader />
@@ -93,8 +102,8 @@ function IncomeTax() {
                         </Box>
                     </Grid>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', marginTop: '30px' }}>
-                        <Button variant='contained' sx={{ backgroundColor: '#052CAC', borderRadius: '10px', padding: '10px', marginBottom: '30px', marginLeft: '20px' }}>BACK</Button>
-                        <Button variant='contained' sx={{ backgroundColor: '#052CAC', borderRadius: '10px', padding: '10px', marginBottom: '30px' }}>SAVE & NEXT</Button>
+                        <Button variant='contained' onClick={handleback} sx={{ backgroundColor: '#052CAC', borderRadius: '10px', padding: '10px', marginBottom: '30px', marginLeft: '20px' }}>BACK</Button>
+                        <Button variant='contained' onClick={handleNext} sx={{ backgroundColor: '#052CAC', borderRadius: '10px', padding: '10px', marginBottom: '30px' }}>SAVE & NEXT</Button>
                     </Box>
                 </Grid>
             </Grid>
