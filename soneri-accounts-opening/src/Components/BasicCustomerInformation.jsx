@@ -165,7 +165,7 @@ function BasicCustomerInformation() {
                                 padding: '10px',
                                 color: '#fff',
                                 '&:hover': {
-                                    backgroundColor: isFormValid ? '#052CAC' : '#E0E0E0', // Set hover color to match the default background color
+                                    backgroundColor: isFormValid ? '#052CAC' : '#E0E0E0',
                                 },
                                 '&:disabled': {
                                     backgroundColor: '#E0E0E0',

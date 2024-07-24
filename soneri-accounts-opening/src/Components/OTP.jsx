@@ -55,7 +55,7 @@ function OTP() {
                                 sx={{
                                     marginLeft: index === 0 ? 0 : '10px',
                                     backgroundColor: '#EDEDEC',
-                                    borderRadius: '10px',
+                                    borderRadius: '2px',
                                 }}
                             />
                         ))}

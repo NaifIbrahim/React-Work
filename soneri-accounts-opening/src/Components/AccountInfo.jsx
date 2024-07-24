@@ -203,12 +203,11 @@ function AccountInfo() {
                                 <FormControlLabel value="half_yearly" control={<Radio />} label="Half Yearly" />
                                 <FormControlLabel value="yearly" control={<Radio />} label="Yearly" />
                             </RadioGroup>
-                            <FormControlLabel
+                            <FormControlLabel sx={{marginBottom:'10px'}}
                                 control={<Checkbox {...label} />}
                                 label="I do hereby authorize the Bank to send regulatory statement of account of my account through email (E-SOA) in lieu of physical dispatch of statement at my address. I undertake that it is my sole responsibility to keep the mentioned email address active, valid and protected in all respects."
                             />
                         </FormControl>
-                        <br />
                         <Typography variant='body1'>
                             Your account statement will be delivered to your email address naifibrahim125@gmail.com
                         </Typography>
