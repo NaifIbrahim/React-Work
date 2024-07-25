@@ -37,7 +37,7 @@ function Homepage() {
 
     useEffect(() => {
         fetchData();
-    }, [selectedAccountType]);
+    });
 
     return (
         <>
