@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { Box, Button, TextField, Typography } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Box, Button, TextField, Typography, CircularProgress } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 function OTP() {
     const [otp, setOtp] = useState(['', '', '', '']);
     const [isOtpComplete, setIsOtpComplete] = useState(false);
+     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleOtpChange = (index, value) => {
@@ -12,19 +13,21 @@ function OTP() {
         newOtp[index] = value;
 
         setOtp(newOtp);
-
         setIsOtpComplete(newOtp.every(digit => digit.length > 0));
     };
 
-    const handleNext = () => {
+    useEffect(() => {
         if (isOtpComplete) {
-            navigate('/BasicInformation'); 
+            setLoading(true);
+            setTimeout(() => {
+                navigate('/BasicInformation');
+            }, 600);
         }
-    };
+    }, [isOtpComplete, navigate]);
 
     return (
         <>
-        <br />
+            <br />
             <Box sx={{ display: 'flex', justifyContent: 'center', height: '80%' }}>
                 <Box sx={{ textAlign: 'center' }}>
                     <Typography variant='body1'>
@@ -65,28 +68,11 @@ function OTP() {
                     >
                         RESEND OTP
                     </Button>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', marginTop:'10px' }}>
-                        <Button
-                            onClick={handleNext}
-                            disabled={!isOtpComplete}
-                            sx={{
-                                width: '30%',
-                                backgroundColor: isOtpComplete ? '#052CAC' : '#E0E0E0',
-                                color: '#fff',
-                                borderRadius: '10px',
-                                padding: '10px',
-                                '&:hover': {
-                                    backgroundColor: isOtpComplete ? '#052CAC' : '#E0E0E0',
-                                },
-                                '&:disabled': {
-                                    backgroundColor: '#E0E0E0',
-                                    color: '#000',
-                                },
-                            }}
-                        >
-                            NEXT
-                        </Button>
-                    </Box>
+                    {loading && (
+                        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                            <CircularProgress />
+                        </Box>
+                    )}
                 </Box>
             </Box>
         </>
